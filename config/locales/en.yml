@@ -33,3 +33,4 @@ en:
   home:
     signup: 'Sign Up'
     login: 'Login'
+    logout: 'Log Out'

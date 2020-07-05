@@ -10,9 +10,23 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/">Notes</a>
+        <% if user_signed_in? %>
+          <%= link_to t('home.logout'),  destroy_user_session_path, method: :delete%>
+        <% else %>
+          <%= button_to t('home.signup'), new_user_registration_path, method: :get %>
+          <%= button_to t('home.login'),  new_user_session_path %>
+        <% end %>
+    </nav>
     <div class="container">
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
+        <!-- this is a hack to stop the below alert from appearing when the user clicks on "Login" -->
+        <!-- for some reason Sessions is throwing this alert message then displaying the login page -->
+        <!-- it makes for a bad user experience.-->
+        <% unless value == "Invalid Email or password." && params[:email].nil? && params[:password].nil? %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
       <% end %>
       <%= yield %>
       <%= debug(params) if Rails.env.development? %>
