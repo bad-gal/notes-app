@@ -37,3 +37,5 @@ en:
   notes:
     index:
       header: 'My Notes'
+    create:
+      success: "Note was successfully created."
