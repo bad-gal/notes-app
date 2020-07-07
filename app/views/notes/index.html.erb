@@ -1,0 +1,8 @@
+<h4><%= t('notes.index.header') %></h4>
+
+<ul>
+  <% @notes.each do |note| %>
+    <li>Subject: <%= note.subject %></li>
+    <li>Text: <%= note.text %></li>
+  <% end %>
+</ul>

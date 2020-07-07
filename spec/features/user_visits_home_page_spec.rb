@@ -35,6 +35,7 @@ RSpec.feature 'User visits home page' do
 
     # flash success message
     expect(page).to have_content(I18n.t('devise.sessions.signed_in'))
+    expect(page).to have_content(I18n.t('notes.index.header'))
   end
 
   def sign_up_user
