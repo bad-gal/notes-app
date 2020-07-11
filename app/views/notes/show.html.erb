@@ -1,2 +1,4 @@
 <%= @note.subject %>
 <%= @note.text %>
+<%= link_to t('notes.edit'), edit_note_path(@note.id) %>
+<%= link_to 'Delete note', note_path(@note.id), method: :delete, data: { confirm: t('notes.destroy.confirmation')} %>

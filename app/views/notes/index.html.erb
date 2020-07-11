@@ -1,8 +1,12 @@
 <h4><%= t('notes.index.header') %></h4>
 
+<%= link_to t('notes.new'), new_note_path %>
 <ul>
   <% @notes.each do |note| %>
     <li>Subject: <%= note.subject %></li>
     <li>Text: <%= note.text %></li>
+    <li><%= link_to 'View', note_path(note.id) %></li>
+    <li><%= link_to 'Edit', edit_note_path(note.id) %></li>
+    <%= link_to 'Delete', note_path(note.id), method: :delete, data: { confirm: t('notes.destroy.confirmation')} %>
   <% end %>
 </ul>

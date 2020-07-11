@@ -1,3 +1,20 @@
-New Note
+<%= form_with(model: @note, local: true) do |f| %>
+  <% if @note.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(@note.errors.count, "error") %> prohibited this note from being <%= params[:action] == 'create' ? 'saved' : 'updated' %>:</h4>
 
-<%= render partial: 'form' %>
+      <ul>
+        <% @note.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :subject %>
+  <%= f.text_field :subject %>
+  <%= f.label :text %>
+  <%= f.text_area :text %>
+  <%= f.submit button %>
+<% end %>
+

@@ -37,5 +37,15 @@ en:
   notes:
     index:
       header: 'My Notes'
+    new: 'Create note'
+    edit: 'Edit note'
+    update:
+      fail: 'Note could not be updated!'
+      success: 'Note was successfully updated.'
+    destroy:
+      confirmation: 'Are you sure you want to delete this note?'
+      fail: 'Note could not be found!'
+      success: 'Note was deleted successfully.'
     create:
-      success: "Note was successfully created."
+      fail: 'Note could not be created!'
+      success: 'Note was successfully created.'
