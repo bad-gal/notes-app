@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'rails_helper'
+
 RSpec.feature 'User visits home page' do
   scenario 'they see the main page' do
     visit root_path
@@ -33,18 +35,7 @@ RSpec.feature 'User visits home page' do
     fill_in('Password', with: '1234piano')
     click_button('Log in')
 
-    # flash success message
     expect(page).to have_content(I18n.t('devise.sessions.signed_in'))
     expect(page).to have_content(I18n.t('notes.index.header'))
-  end
-
-  def sign_up_user
-    visit root_path
-    click_button(I18n.t('home.signup'), match: :first)
-
-    fill_in('Email', with: 'noname@noname.com')
-    fill_in('Password', with: '1234piano')
-    fill_in('Password confirmation', with: '1234piano')
-    click_button('Sign up')
   end
 end
