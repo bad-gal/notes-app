@@ -1,0 +1,7 @@
+<h4><%= t('settings.index.title') %></h4>
+
+<h6><%= t('settings.index.delete_info') %>><span><%= button_to t('settings.index.edit_button'), edit_user_registration_path, method: :get  %></span></h6>
+
+<h6><%= t('settings.index.delete_info') %>></h6>
+<h6><%= t('settings.index.delete_warning') %></h6>
+<span><%=button_to t('settings.index.delete_button'), user_registration_path, method: :delete %></span>

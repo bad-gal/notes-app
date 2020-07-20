@@ -49,3 +49,11 @@ en:
     create:
       fail: 'Note could not be created!'
       success: 'Note was successfully created.'
+  settings:
+    index:
+      title: 'User Settings'
+      edit_info: 'Change your email or password'
+      edit_button: 'Edit account'
+      delete_info: 'Delete your account'
+      delete_warning: 'Once you delete your account, there is no going back. Please be certain that you want to delete your account'
+      delete_button: 'Delete account'
